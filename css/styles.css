@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Homemade+Apple");
+/* TAG STYLING */
+* {
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-family: "Homemade Apple", sans-serif;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #aaa;
+  text-decoration: none;
+  transition: 0.5s ease color, 0.5s ease background-color;
+}
+a:hover {
+  color: #21c4e2;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* LAYOUT CLASSES */
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* TEXT FOR SCREEN READERS */
+.screen-reader-only, #portfolio-filters li input[type='radio'] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* HEADER */
+#logo {
+  font-family: "Homemade Apple", sans-serif;
+  font-size: 2em;
+  color: #000;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+header {
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+}
+header nav {
+  margin: 0 auto;
+}
+header nav li {
+  letter-spacing: 1px;
+  font-size: 0.7em;
+  margin-left: 1.5em;
+  display: inline-block;
+  text-transform: uppercase;
+}
+header nav li:first-child {
+  margin-left: 0;
+}
+header nav li a {
+  display: inline-block;
+  vertical-align: sub;
+}
+
+/* MAIN WRAPPER */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* SECTIONS OF CONTENT */
+section {
+  margin-top: 2em;
+  padding-top: 5em;
+  text-align: center;
+}
+section#portfolio {
+  text-align: left;
+}
+
+/* PROJECT TILES */
+.project {
+  float: left;
+  transition: opacity 0.35s ease-in-out;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+.project.active {
+  margin: 10px;
+  opacity: 1;
+  height: auto;
+  width: calc(33.333% - 20px);
+}
+
+/* PORTFOLIO FILTERS */
+#portfolio-filters {
+  display: inline-block;
+  font-size: 0;
+  border-radius: 3px;
+  border: 1px solid #eee;
+}
+#portfolio-filters li {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+#portfolio-filters li:first-child label {
+  border-left: 0;
+}
+#portfolio-filters li label {
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  display: block;
+  padding: 0.75em 1.5em;
+}
+#portfolio-filters li input:checked ~ label {
+  color: #21c4e2;
+  background-color: #eee;
+}
+
+/* MODALS */
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  max-width: 630px;
+  height: auto;
+  z-index: 2;
+  visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+}
+.modal-content.open {
+  visibility: visible;
+}
+.modal-content__wrapper {
+  color: #fff;
+  background-color: #1693aa;
+  position: relative;
+  border-radius: 3px;
+  margin: 0 auto;
+  transform: translateX(20%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+.open .modal-content__wrapper {
+  transform: translateX(0);
+  opacity: 1;
+}
+.modal-content__description {
+  padding: 15px 40px 30px;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.15em;
+}
+.modal-content__title {
+  margin: 0;
+  padding: 0.4em;
+  text-align: center;
+  font-size: 2.4em;
+  font-weight: 300;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px 3px 0 0;
+}
+.modal-content__close {
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #1693aa;
+  color: #fff;
+  border: 2px solid;
+  margin: 0 auto;
+  display: block;
+  padding: 0.5em 1em;
+}
+
+#modal-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  background-color: rgba(33, 196, 226, 0.5);
+  transition: all 0.3s;
+}
+.open ~ #modal-overlay {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html>
+  <head>
+    <!-- Page information -->
+    <title>Ada Lovelace, Boston Web Developer</title>
+    <meta name="description" content="The portfolio and resume of Boston-based web developer Ada Lovelace" />
+
+    <!-- OpenGraph (OG) data displays when the page is shared on social media -->
+    <meta property="og:image" content="//jdfus-44a8.kxcdn.com/wp-content/uploads/2015/10/adalovelaceday-652x652.jpg" />
+    <meta name="twitter:card" value="summary">
+    <meta property="og:title" content="Ada Lovelace, Boston Web Developer" />
+    <meta property="og:description" content="The portfolio and resume of Boston-based web developer Ada Lovelace" />
+
+    <!-- CSS Reference -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+
+  <body>
+
+    <main id="main">
+
+      <!-- HEADER -->
+      <header class="flex">
+        <h1 class="screen-reader-only">Portfolio of Ada Lovelace, Boston Web Developer</h1>
+        
+        <nav>
+          <ul>
+            <li>
+              <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a id="logo" href="#main">Ada Lovelace</a>
+            </li>
+            <li>
+              <a href="#resume">Resume</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    
+      <!-- PORTFOLIO -->
+      <section id="portfolio">
+
+        <!-- Filter radio buttons for portfolio -->
+        <ul id="portfolio-filters">
+          <li>
+            <input class="portfolio-filter" id="filter0" value="0" name="filter" type="radio" checked />
+            <label for="filter0">All</label> 
+          </li>
+          
+          <li>
+            <input class="portfolio-filter" id="filter1" value="1" name="filter" type="radio" />
+            <label for="filter1">Web Development</label> 
+          </li>
+          
+          <li>
+            <input class="portfolio-filter" id="filter2" value="2" name="filter" type="radio" />
+            <label for="filter2">Graphic Design</label> 
+          </li>
+          
+          <li>
+            <input class="portfolio-filter" value="3" id="filter3" name="filter" type="radio" />
+            <label for="filter3">Illustration</label> 
+          </li>
+        </ul>
+      
+        <!-- List of projects in portfolio -->
+        <ul class="clearfix">
+          <li class="project active" data-category="3">
+            <img src="http://unsplash.it/300/240" />
+            <h3>My Illustration Project</h3>  
+          </li>
+          <li class="project active" data-category="1">
+            <a href="#" class="modal-link" data-modal="modal-1">
+              <img src="http://unsplash.it/300/239" />
+              <h3>My Web Dev Project</h3> 
+            </a>
+          </li> 
+          <li class="project active" data-category="2">
+            <a href="#" class="modal-link" data-modal="modal-2">
+              <img src="http://unsplash.it/300/241" />
+              <h3>My Graphic Design Project</h3>
+            </a>
+          </li>
+          <li class="project active" data-category="1">
+            <img src="http://unsplash.it/300/237" />
+            <h3>Yet Another Web Dev Project</h3> 
+          </li>
+          <li class="project active" data-category="3">
+            <img src="http://unsplash.it/300/238" />
+            <h3>A Cool Illustration Project</h3>  
+          </li>
+        </ul>
+      </section>
+
+      
+      <!-- ABOUT -->
+      <section id="about">
+        <h2>About Ada</h2>
+        <p>I am a skilled developer with a badass portfolio.</p>
+      </section>
+      
+
+      <!-- RESUME -->
+      <section id="resume">
+        <h2>Resume</h2>
+        <p>That's right; I have a <a href="#">history of wizardry</a>. Check it out!</p>
+      </section>
+      
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p><a href="mailto:something@something.com">Email</a> &nbsp;&nbsp;||&nbsp;&nbsp; <a href="http://linkedin.com/in/something" target="_blank">LinkedIn</a>&nbsp;&nbsp; || &nbsp;&nbsp;<a href="http://github.com/something" target="_blank">GitHub</a></p>
+      </section>
+    </main>
+    
+    
+    <!-- PORTFOLIO MODALS -->
+    <div id="modal-1" class="modal-content">
+      <div class="modal-content__wrapper">
+        <h4 class="modal-content__title">My Web Dev Project</h4>
+        <div class="modal-content__description">
+          <p>This ambitious project involved x, y, z, and a.</p>
+          <button class="modal-content__close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-2" class="modal-content">
+      <div class="modal-content__wrapper">
+        <h4 class="modal-content__title">My Graphic Design Project</h4>
+        <div class="modal-content__description">
+          <p>This project was so fun to work on. It involved x, y, z, and a. I was the lead strategist responsible for all creative decisions.</p>
+          <button class="modal-content__close">Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- MODAL OVERLAY -->
+    <div id="modal-overlay"></div>   
+	
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+  </body>
+</html>
